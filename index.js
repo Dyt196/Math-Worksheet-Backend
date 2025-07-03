@@ -26,13 +26,14 @@ app.get('/', (req, res) => {
 app.get('/score-history', (req, res) => {
     const scoreList = db.prepare('SELECT * FROM history').all();
     scoreList.sort((a, b) => {
-        const dateA = new Date(a.timestamp);
-        const dateB = new Date(b.timestamp);
-
-        if (dateA < dateB) return -1;
-        if (dateA > dateB) return 1;
-
+    if (b.score !== a.score) {
         return b.score - a.score;
+    }
+
+    const dateA = new Date(a.timestamp);
+    const dateB = new Date(b.timestamp);
+
+    return dateA - dateB;
     });
     res.json(scoreList)
 })
