@@ -1,0 +1,17 @@
+{
+  "name": "math-worksheet-backend",
+  "version": "1.0.0",
+  "description": "Test Pack for Bridge International Asia Sdn Bhd.",
+  "license": "ISC",
+  "author": "Ikhmal Hidayat",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
